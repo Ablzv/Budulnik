@@ -1,0 +1,6 @@
+# robots.txt for SmartBudilnik
+User-agent: *
+Allow: /
+
+# Sitemap URL
+Sitemap: https://ablzv.github.io/Budulnik/sitemap.xml

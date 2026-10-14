@@ -1,0 +1,19 @@
+{
+  "name": "SmartBudilnik — Onlayn Budilnik va Vaqt Belgilash",
+  "short_name": "SmartBudilnik",
+  "description": "HTML, CSS va JavaScript asosidagi zamonaviy, tezkor va bepul onlayn budilnik websayti.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0e17",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "productivity"]
+}

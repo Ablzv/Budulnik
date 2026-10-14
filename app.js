@@ -230,32 +230,16 @@
         'Iyul', 'Avgust', 'Sentyabr', 'Oktyabr', 'Noyabr', 'Dekabr'
     ];
 
-    function updateClock() {
+    let lastRenderedSecond = -1;
+
+    // Smooth 60fps analog clock animation using requestAnimationFrame
+    function renderAnalogLoop() {
         const now = new Date();
-        const hours24 = now.getHours();
-        const minutes = now.getMinutes();
         const seconds = now.getSeconds();
         const milliseconds = now.getMilliseconds();
+        const minutes = now.getMinutes();
+        const hours24 = now.getHours();
 
-        // 1. Digital Display
-        const hours12 = hours24 % 12 || 12;
-        const period = hours24 >= 12 ? 'PM' : 'AM';
-
-        elements.digitHours.textContent = String(hours24).padStart(2, '0');
-        elements.digitMinutes.textContent = String(minutes).padStart(2, '0');
-        elements.digitSeconds.textContent = String(seconds).padStart(2, '0');
-        elements.digitPeriod.textContent = period;
-
-        // Date Display
-        const dayName = UZ_WEEKDAYS[now.getDay()];
-        const monthName = UZ_MONTHS[now.getMonth()];
-        const dateNum = now.getDate();
-        const year = now.getFullYear();
-
-        elements.currentDateDisplay.textContent = `${dateNum}-${monthName}, ${year}`;
-        elements.currentDayOfWeek.textContent = dayName;
-
-        // 2. Analog Clock Hands
         const secFraction = (seconds + milliseconds / 1000) / 60;
         const minFraction = (minutes + secFraction) / 60;
         const hourFraction = ((hours24 % 12) + minFraction) / 12;
@@ -268,14 +252,40 @@
         elements.minuteHand.style.transform = `rotate(${minDeg}deg)`;
         elements.hourHand.style.transform = `rotate(${hourDeg}deg)`;
 
-        // 3. Check Alarms if minute changed or second === 0
+        // If second changed, update digital clock and check alarms
+        if (seconds !== lastRenderedSecond) {
+            lastRenderedSecond = seconds;
+            updateDigitalClock(now, hours24, minutes, seconds);
+        }
+
+        requestAnimationFrame(renderAnalogLoop);
+    }
+
+    function updateDigitalClock(now, hours24, minutes, seconds) {
+        // Digital display
+        const period = hours24 >= 12 ? 'PM' : 'AM';
+        elements.digitHours.textContent = String(hours24).padStart(2, '0');
+        elements.digitMinutes.textContent = String(minutes).padStart(2, '0');
+        elements.digitSeconds.textContent = String(seconds).padStart(2, '0');
+        elements.digitPeriod.textContent = period;
+
+        // Date display
+        const dayName = UZ_WEEKDAYS[now.getDay()];
+        const monthName = UZ_MONTHS[now.getMonth()];
+        const dateNum = now.getDate();
+        const year = now.getFullYear();
+
+        elements.currentDateDisplay.textContent = `${dateNum}-${monthName}, ${year}`;
+        elements.currentDayOfWeek.textContent = dayName;
+
+        // Check alarms
         const currentMinuteStr = `${String(hours24).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
         if (seconds === 0 && lastCheckedMinute !== currentMinuteStr) {
             lastCheckedMinute = currentMinuteStr;
             checkAlarmsToRing(currentMinuteStr);
         }
 
-        // Update remaining countdown badges every 5 seconds or on minute change
+        // Update remaining countdown badges every 5 seconds
         if (seconds % 5 === 0) {
             updateAlarmCountdowns();
         }
@@ -921,9 +931,8 @@
         loadAlarms();
         renderAlarms();
 
-        // Run clock tick immediately and then every 100ms for ultra-smooth hands
-        updateClock();
-        setInterval(updateClock, 100);
+        // Start high-performance 60fps clock loop
+        renderAnalogLoop();
     }
 
     // Start on DOM ready

@@ -1,27 +1,139 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="uz" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aqlli Budilnik — Zamonaviy Vaqt va Signal Tizimi</title>
-    <meta name="description" content="HTML, CSS va JavaScript asosida yaratilgan zamonaviy, qulay va ishonchli onlayn budilnik websayti.">
-    <!-- Google Fonts -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary SEO Meta Tags -->
+    <title>Onlayn Budilnik — Tezkor Signal va Vaqt Belgilash | Online Alarm Clock</title>
+    <meta name="title" content="Onlayn Budilnik — Tezkor Signal va Vaqt Belgilash | Online Alarm Clock">
+    <meta name="description" content="Eng qulay, ishonchli va bepul onlayn budilnik (online alarm clock). Vaqtni belgilang, yoqimli signal ohangini tanlang va o'z vaqtida uyg'oning. O'zbek tilidagi tezkor budilnik sozlash websayti.">
+    <meta name="keywords" content="Onlayn budilnik, Online alarm clock, Onlayn budilnik sozlash, Tezkor budilnik, Ovozli budilnik, Budilnik o'rnatish, Budilnik sayt, Budilnik onlayn, Smart alarm clock">
+    <meta name="author" content="Ablzv">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://ablzv.github.io/Budulnik/">
+
+    <!-- Open Graph / Facebook / Telegram -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ablzv.github.io/Budulnik/">
+    <meta property="og:site_name" content="SmartBudilnik">
+    <meta property="og:title" content="Onlayn Budilnik — Tezkor Signal va Vaqt Belgilash">
+    <meta property="og:description" content="Vaqtni belgilang, sevimli ohangni tanlang va o'z vaqtida uyg'oning. Ishonchli, bepul va zamonaviy onlayn budilnik websayti.">
+    <meta property="og:image" content="https://ablzv.github.io/Budulnik/favicon.svg">
+    <meta property="og:image:alt" content="SmartBudilnik — Onlayn Budilnik">
+    <meta property="og:locale" content="uz_UZ">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ablzv.github.io/Budulnik/">
+    <meta name="twitter:title" content="Onlayn Budilnik — Tezkor Signal va Vaqt Belgilash">
+    <meta name="twitter:description" content="Vaqtni belgilang, sevimli ohangni tanlang va o'z vaqtida uyg'oning. Ishonchli va zamonaviy onlayn budilnik.">
+    <meta name="twitter:image" content="https://ablzv.github.io/Budulnik/favicon.svg">
+
+    <!-- Mobile & PWA Theme -->
+    <meta name="theme-color" content="#6366f1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="SmartBudilnik">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Google Fonts Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Structured Data (Schema.org / JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://ablzv.github.io/Budulnik/#webapp",
+          "name": "SmartBudilnik — Onlayn Budilnik",
+          "url": "https://ablzv.github.io/Budulnik/",
+          "description": "HTML, CSS va JavaScript yordamida yaratilgan zamonaviy, qulay va bepul onlayn budilnik websayti.",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "All (Web Browser)",
+          "browserRequirements": "Requires JavaScript. Requires HTML5 Web Audio API.",
+          "inLanguage": "uz",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "featureList": [
+            "Jonli analog va raqamli soat",
+            "Web Audio API sintezlangan 4 ta ohang",
+            "Maxsus audio fayl (mp3/wav) yuklash",
+            "5 daqiqaga kechiktirish (Snooze)",
+            "Doimiy LocalStorage saqlash",
+            "Tezkor vaqt presetlari",
+            "Brauzer bildirishnomalari"
+          ],
+          "creator": {
+            "@type": "Person",
+            "name": "Ablzv",
+            "url": "https://github.com/Ablzv"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://ablzv.github.io/Budulnik/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Onlayn budilnik qanday ishlaydi?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Saytga kirib kerakli vaqtni (masalan, 07:00) belgilaysiz, yoqtirgan signal ohangini tanlaysiz va 'Budilnikni Saqlash' tugmasini bosasiz. Belgilangan vaqt yetib kelishi bilan brauzer avtomatik ravishda ovoz chiqarib sizni uyg'otadi."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Budilnik ishlashi uchun kompyuter yoki telefon ekranini yoqiq qoldirish kerakmi?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Budilnik ishonchli ishlashi uchun brauzer sahifasi (yorlig'i) ochiq qolishi kerak. Kompyuter yoki telefon chuqur uyqu (sleep) rejimiga o'tsa brauzer vaqt hisoblagichi to'xtab qolishi mumkin, shuning uchun qurilmani uyqu rejimiga o'tmasligini ta'minlash tavsiya etiladi."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Budilnik ishlashi uchun doimiy internet kerakmi?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yo'q, sahifa bir marta yuklangach, barcha audio tovushlar Web Audio API orqali kompyuteringizning o'zida generatsiya qilinadi. Internet uzilib qolsa ham budilnik to'liq rejimda ishlayveradi."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O'zimning sevimli musiqamni qo'ng'iroq ohangi qilib o'rnatsam bo'ladimi?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ha! 'Qo'ng'iroq Ohangi' bo'limidan 'O'z audio faylingiz...' variantini tanlab, kompyuteringiz yoki telefoningizdagi istalgan .mp3 yoki .wav audio faylini yuklashingiz mumkin."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="theme-dark">
     <!-- Background Animated Glow Orbs -->
-    <div class="bg-glow-orb orb-1"></div>
-    <div class="bg-glow-orb orb-2"></div>
-    <div class="bg-glow-orb orb-3"></div>
+    <div class="bg-glow-orb orb-1" aria-hidden="true"></div>
+    <div class="bg-glow-orb orb-2" aria-hidden="true"></div>
+    <div class="bg-glow-orb orb-3" aria-hidden="true"></div>
 
     <div class="app-container">
         <!-- Header -->
         <header class="app-header">
             <div class="brand">
-                <div class="brand-icon-wrapper">
+                <div class="brand-icon-wrapper" aria-hidden="true">
                     <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="13" r="8"></circle>
                         <path d="M12 9v4l2 2"></path>
@@ -33,27 +145,27 @@
                 </div>
                 <div>
                     <h1 class="brand-title">SmartBudilnik</h1>
-                    <p class="brand-subtitle">Vaqtni qadrlaydiganlar uchun aqlli signal tizimi</p>
+                    <p class="brand-subtitle">Onlayn budilnik sozlash va tezkor vaqt signal tizimi</p>
                 </div>
             </div>
 
             <div class="header-actions">
                 <!-- Theme Switcher -->
-                <div class="theme-selector-group">
-                    <button class="theme-btn active" data-theme="theme-dark" title="Midnight Dark">
-                        <span class="theme-dot dot-dark"></span> Tungi
+                <div class="theme-selector-group" role="group" aria-label="Vizual mavzuni tanlash">
+                    <button type="button" class="theme-btn active" data-theme="theme-dark" title="Midnight Dark">
+                        <span class="theme-dot dot-dark" aria-hidden="true"></span> Tungi
                     </button>
-                    <button class="theme-btn" data-theme="theme-neon" title="Cyber Neon">
-                        <span class="theme-dot dot-neon"></span> Neon
+                    <button type="button" class="theme-btn" data-theme="theme-neon" title="Cyber Neon">
+                        <span class="theme-dot dot-neon" aria-hidden="true"></span> Neon
                     </button>
-                    <button class="theme-btn" data-theme="theme-aurora" title="Emerald Aurora">
-                        <span class="theme-dot dot-aurora"></span> Zumrad
+                    <button type="button" class="theme-btn" data-theme="theme-aurora" title="Emerald Aurora">
+                        <span class="theme-dot dot-aurora" aria-hidden="true"></span> Zumrad
                     </button>
                 </div>
 
                 <!-- Notification Permission Toggle -->
-                <button id="notificationToggleBtn" class="action-pill-btn" title="Brauzer bildirishnomalarini yoqish">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <button type="button" id="notificationToggleBtn" class="action-pill-btn" title="Brauzer bildirishnomalarini yoqish">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
                         <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
                     </svg>
@@ -63,9 +175,9 @@
         </header>
 
         <!-- Main Grid Layout -->
-        <main class="main-layout">
+        <main class="main-layout" id="mainContent">
             <!-- Left Column: Clock & Hero Display -->
-            <section class="clock-showcase-card glass-panel">
+            <section class="clock-showcase-card glass-panel" aria-label="Real vaqt soat ko'rsatkichi">
                 <div class="date-badge-wrapper">
                     <span id="currentDateDisplay" class="date-badge">Yuklanmoqda...</span>
                     <span id="currentDayOfWeek" class="day-badge">...</span>
@@ -73,37 +185,36 @@
 
                 <!-- Analog Clock -->
                 <div class="analog-clock-container">
-                    <div class="analog-clock" id="analogClock">
+                    <div class="analog-clock" id="analogClock" aria-label="Analog soat siferblati">
                         <div class="clock-face">
-                            <!-- Hour markers generated via CSS / SVG -->
-                            <div class="clock-tick tick-12"></div>
-                            <div class="clock-tick tick-3"></div>
-                            <div class="clock-tick tick-6"></div>
-                            <div class="clock-tick tick-9"></div>
+                            <div class="clock-tick tick-12" aria-hidden="true"></div>
+                            <div class="clock-tick tick-3" aria-hidden="true"></div>
+                            <div class="clock-tick tick-6" aria-hidden="true"></div>
+                            <div class="clock-tick tick-9" aria-hidden="true"></div>
                             
-                            <div class="clock-hand hand-hour" id="hourHand"></div>
-                            <div class="clock-hand hand-minute" id="minuteHand"></div>
-                            <div class="clock-hand hand-second" id="secondHand"></div>
-                            <div class="clock-center-pin"></div>
+                            <div class="clock-hand hand-hour" id="hourHand" aria-hidden="true"></div>
+                            <div class="clock-hand hand-minute" id="minuteHand" aria-hidden="true"></div>
+                            <div class="clock-hand hand-second" id="secondHand" aria-hidden="true"></div>
+                            <div class="clock-center-pin" aria-hidden="true"></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Digital Clock Display -->
-                <div class="digital-clock-wrapper">
+                <div class="digital-clock-wrapper" aria-live="off">
                     <div class="digital-time-box">
                         <span id="digitHours" class="time-digit">00</span>
-                        <span class="time-colon">:</span>
+                        <span class="time-colon" aria-hidden="true">:</span>
                         <span id="digitMinutes" class="time-digit">00</span>
-                        <span class="time-colon">:</span>
+                        <span class="time-colon" aria-hidden="true">:</span>
                         <span id="digitSeconds" class="time-digit highlight-sec">00</span>
                     </div>
                     <div class="time-period-tag" id="digitPeriod">AM</div>
                 </div>
 
                 <!-- Next Upcoming Alarm Banner -->
-                <div class="next-alarm-info" id="nextAlarmBanner">
-                    <div class="next-alarm-icon">
+                <div class="next-alarm-info" id="nextAlarmBanner" role="status" aria-live="polite">
+                    <div class="next-alarm-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="10"></circle>
                             <polyline points="12 6 12 12 16 14"></polyline>
@@ -119,10 +230,10 @@
             <!-- Right Column: Set Alarm Controls & Active Alarms -->
             <div class="controls-column">
                 <!-- Create Alarm Form Card -->
-                <section class="alarm-form-card glass-panel">
+                <section class="alarm-form-card glass-panel" aria-label="Budilnik o'rnatish formasi">
                     <div class="card-header">
                         <div class="card-title-group">
-                            <span class="card-icon-chip">
+                            <span class="card-icon-chip" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="10"></circle>
                                     <line x1="12" y1="8" x2="12" y2="12"></line>
@@ -136,20 +247,20 @@
                         </div>
                     </div>
 
-                    <form id="alarmForm" class="alarm-form">
+                    <form id="alarmForm" class="alarm-form" aria-label="Yangi budilnik qo'shish">
                         <!-- Time Input with Large Digits -->
                         <div class="form-group">
                             <label for="alarmTimeInput" class="form-label">Budilnik Vaqti</label>
                             <div class="time-input-container">
-                                <input type="time" id="alarmTimeInput" class="time-picker-input" required step="60">
-                                <div class="time-input-tip">Format: 24-soatlik (masalan, 07:30)</div>
+                                <input type="time" id="alarmTimeInput" class="time-picker-input" required step="60" aria-describedby="timeFormatTip">
+                                <div id="timeFormatTip" class="time-input-tip">Format: 24-soatlik (masalan, 07:30)</div>
                             </div>
                         </div>
 
                         <!-- Quick Presets -->
                         <div class="form-group">
                             <label class="form-label">Tezkor Vaqt Tugmalari</label>
-                            <div class="quick-preset-buttons">
+                            <div class="quick-preset-buttons" role="group" aria-label="Tezkor vaqt qo'shish">
                                 <button type="button" class="preset-btn" data-minutes="5">+5 daqiqa</button>
                                 <button type="button" class="preset-btn" data-minutes="15">+15 daqiqa</button>
                                 <button type="button" class="preset-btn" data-minutes="30">+30 daqiqa</button>
@@ -163,7 +274,7 @@
                         <div class="form-group">
                             <label for="alarmLabelInput" class="form-label">Signal Nomi (Ixtiyoriy)</label>
                             <div class="input-with-icon">
-                                <svg class="input-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg class="input-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <path d="M12 20h9"></path>
                                     <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
                                 </svg>
@@ -194,18 +305,18 @@
                                     <span id="volumePercentDisplay" class="volume-val">80%</span>
                                 </div>
                                 <div class="volume-control-wrapper">
-                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                         <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                                         <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
                                     </svg>
-                                    <input type="range" id="volumeSlider" class="custom-range" min="0" max="100" value="80">
+                                    <input type="range" id="volumeSlider" class="custom-range" min="0" max="100" value="80" aria-label="Ovoz balandligi slayderi">
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Custom File Upload Container (Hidden by default, shown when custom selected) -->
+                        <!-- Custom File Upload Container -->
                         <div id="customAudioUploadGroup" class="form-group custom-audio-group hidden">
-                            <label class="form-label">O'z musiqangizni tanlang (.mp3, .wav, .ogg)</label>
+                            <label for="customAudioFile" class="form-label">O'z musiqangizni tanlang (.mp3, .wav, .ogg)</label>
                             <input type="file" id="customAudioFile" class="file-picker-input" accept="audio/*">
                             <div class="file-info-tip" id="customFileNameDisplay">Fayl tanlanmagan</div>
                         </div>
@@ -213,20 +324,20 @@
                         <!-- Sound Test Button -->
                         <div class="sound-preview-bar">
                             <button type="button" id="testSoundBtn" class="secondary-preview-btn">
-                                <svg class="sound-play-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                <svg class="sound-play-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
                                     <polygon points="5 3 19 12 5 21 5 3"></polygon>
                                 </svg>
                                 <span id="testSoundBtnText">Ovozni sinab ko'rish</span>
                             </button>
                             <!-- Audio visualizer bars -->
-                            <div class="sound-visualizer" id="soundVisualizer">
+                            <div class="sound-visualizer" id="soundVisualizer" aria-hidden="true">
                                 <span></span><span></span><span></span><span></span><span></span>
                             </div>
                         </div>
 
                         <!-- Submit Button -->
                         <button type="submit" id="setAlarmSubmitBtn" class="primary-submit-btn">
-                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <line x1="12" y1="5" x2="12" y2="19"></line>
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                             </svg>
@@ -236,10 +347,10 @@
                 </section>
 
                 <!-- Active Alarms Card -->
-                <section class="alarms-list-card glass-panel">
+                <section class="alarms-list-card glass-panel" aria-label="Saqlangan budilniklar ro'yxati">
                     <div class="card-header list-header">
                         <div class="card-title-group">
-                            <span class="card-icon-chip">
+                            <span class="card-icon-chip" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
                                     <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
@@ -256,23 +367,138 @@
                     </div>
 
                     <!-- Alarms Container -->
-                    <div id="alarmsListContainer" class="alarms-container">
+                    <div id="alarmsListContainer" class="alarms-container" role="region" aria-live="polite">
                         <!-- Dynamically populated or empty state -->
                     </div>
                 </section>
             </div>
         </main>
 
+        <!-- SEO Content & Educational Guide Section -->
+        <section class="seo-content-section glass-panel" aria-labelledby="seoGuideTitle">
+            <header class="seo-section-header">
+                <span class="seo-badge">QO'LLANMA VA MA'LUMOTLAR</span>
+                <h2 id="seoGuideTitle" class="seo-main-heading">Onlayn budilnikdan qanday foydalaniladi?</h2>
+                <p class="seo-sub-heading">Internet orqali qulay, bepul va xatosiz ishlaydigan online alarm clock xizmatidan maksimal darajada unumli foydalanish yo'riqnomasi.</p>
+            </header>
+
+            <!-- 3-Step Guide Cards -->
+            <div class="seo-steps-grid">
+                <article class="seo-step-card">
+                    <div class="step-num">01</div>
+                    <h3 class="step-title">Vaqtni Belgilang</h3>
+                    <p class="step-desc">Budilnik chalishi kerak bo'lgan aniq vaqtni kiriting yoki <strong>+5 daqiqa</strong>, <strong>07:00</strong> kabi tezkor tugmalardan foydalaning.</p>
+                </article>
+                <article class="seo-step-card">
+                    <div class="step-num">02</div>
+                    <h3 class="step-title">Signal Ohangini Tanlang</h3>
+                    <p class="step-desc">4 xil Web Audio API musiqalaridan birini tanlang yoki o'z kompyuteringizdagi <strong>MP3 musiqani</strong> osongina yuklang.</p>
+                </article>
+                <article class="seo-step-card">
+                    <div class="step-num">03</div>
+                    <h3 class="step-title">Saqlang va O'z Vaqtida Uyg'oning</h3>
+                    <p class="step-desc">"Budilnikni Saqlash" tugmasini bosing. Vaqt yetib kelganda kuchli signal chaladi va katta ogohlantiruvchi oyna paydo bo'ladi.</p>
+                </article>
+            </div>
+
+            <!-- Features & Advantages List -->
+            <div class="seo-advantages-block">
+                <h2 class="seo-sub-title">Nima uchun aynan SmartBudilnik?</h2>
+                <div class="advantages-grid">
+                    <div class="adv-item">
+                        <span class="adv-icon">⚡</span>
+                        <div>
+                            <h4>Mutlaqo Bepul va Reklamasiz</h4>
+                            <p>Hech qanday to'lovlarsiz yoki xalaqit beruvchi reklamalarsiz toza va tezkor ishlaydi.</p>
+                        </div>
+                    </div>
+                    <div class="adv-item">
+                        <span class="adv-icon">📶</span>
+                        <div>
+                            <h4>Oflayn Ishlash Qobiliyati</h4>
+                            <p>Web Audio API yordamida internet uzilib qolsa ham barcha tovushlar ishlashda davom etadi.</p>
+                        </div>
+                    </div>
+                    <div class="adv-item">
+                        <span class="adv-icon">💤</span>
+                        <div>
+                            <h4>Snooze Mexanikasi</h4>
+                            <p>Yana biroz uxlab olish uchun signalni 5 daqiqaga kechiktirish imkoniyati mavjud.</p>
+                        </div>
+                    </div>
+                    <div class="adv-item">
+                        <span class="adv-icon">💾</span>
+                        <div>
+                            <h4>Avtomatik Xotira (LocalStorage)</h4>
+                            <p>Brauzer yopilib ochilsa ham barcha o'rnatilgan signallaringiz xotirada to'liq saqlanadi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section (Accordion) -->
+            <div class="seo-faq-block" id="faqSection">
+                <h2 class="seo-sub-title">Ko'p Beriladigan Savollar (FAQ)</h2>
+                <div class="faq-accordion">
+                    <details class="faq-item" open>
+                        <summary class="faq-question">
+                            <span>Onlayn budilnik qanday ishlaydi?</span>
+                            <span class="faq-chevron" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Kerakli vaqtni (masalan, 07:00) belgilaysiz, yoqtirgan signal ohangini tanlaysiz va "Budilnikni Saqlash" tugmasini bosasiz. Belgilangan vaqt yetib kelishi bilan brauzer avtomatik ravishda ovoz chiqarib sizni uyg'otadi.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Budilnik ishlashi uchun kompyuter yoki telefon ekranini yoqiq qoldirish kerakmi?</span>
+                            <span class="faq-chevron" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Budilnik ishonchli ishlashi uchun brauzer sahifasi (yorlig'i) ochiq qolishi lozim. Kompyuter yoki telefon chuqur uyqu (sleep) rejimiga o'tsa brauzer skriptlari to'xtab qolishi mumkin, shuning uchun qurilma to'liq o'chib qolmasligini ta'minlash tavsiya etiladi.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Budilnik ishlashi uchun internet aloqasi doim kerakmi?</span>
+                            <span class="faq-chevron" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Yo'q, sahifa bir marta yuklangach, barcha audio tovushlar Web Audio API texnologiyasi orqali bevosita brauzeringizning o'zida sintezlanadi. Shu sababli internet uzilib qolsa ham budilnik to'liq rejimda ishlayveradi.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>O'zimning sevimli musiqamni signal qilib o'rnatsam bo'ladimi?</span>
+                            <span class="faq-chevron" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Ha! "Qo'ng'iroq Ohangi" menyusidan "O'z audio faylingiz..." variantini tanlang va kompyuteringizdagi istalgan <code>.mp3</code> yoki <code>.wav</code> faylini yuklang. Budilnik aynan shu qo'shiq bilan jiringlaydi.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
         <!-- Footer -->
         <footer class="app-footer">
-            <p>SmartBudilnik &copy; 2026. Web Audio API & Zamonaviy JavaScript texnologiyalari bilan yaratilgan.</p>
+            <nav class="footer-nav" aria-label="Foydali havolalar">
+                <a href="#mainContent">Budilnik Sozlash</a>
+                <a href="#seoGuideTitle">Qo'llanma</a>
+                <a href="#faqSection">Savol-Javoblar (FAQ)</a>
+                <a href="https://github.com/Ablzv/Budulnik" target="_blank" rel="noopener noreferrer">GitHub Loyihasi</a>
+            </nav>
+            <p>SmartBudilnik &copy; 2026. Barcha huquqlar himoyalangan. HTML5, Web Audio API va zamonaviy JavaScript texnologiyalari bilan yaratilgan bepul onlayn budilnik.</p>
         </footer>
     </div>
 
     <!-- Alarm Triggered Ringing Modal Overlay -->
-    <div id="alarmRingingModal" class="alarm-ringing-modal-overlay hidden">
+    <div id="alarmRingingModal" class="alarm-ringing-modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="ringingTitleDisplay">
         <div class="ringing-modal-content">
-            <div class="ringing-animation-wrapper">
+            <div class="ringing-animation-wrapper" aria-hidden="true">
                 <div class="pulse-ring ring-1"></div>
                 <div class="pulse-ring ring-2"></div>
                 <div class="pulse-ring ring-3"></div>
@@ -293,14 +519,14 @@
 
             <div class="ringing-actions">
                 <button type="button" id="snoozeAlarmBtn" class="snooze-action-btn">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <circle cx="12" cy="12" r="10"></circle>
                         <polyline points="12 6 12 12 16 14"></polyline>
                     </svg>
                     <span>5 daqiqa kechiktirish (Snooze)</span>
                 </button>
                 <button type="button" id="stopAlarmBtn" class="stop-action-btn">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <rect x="6" y="6" width="12" height="12"></rect>
                     </svg>
                     <span>Budilnikni O'chirish</span>
@@ -312,6 +538,6 @@
     <!-- Hidden audio element for custom user audio fallback -->
     <audio id="customAudioElement" preload="auto"></audio>
 
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
 </body>
 </html>
